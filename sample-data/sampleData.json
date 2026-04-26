@@ -1,0 +1,71 @@
+{
+  "admin": {
+    "name": "System Admin",
+    "email": "admin@smartfitness.com",
+    "password": "Admin@123"
+  },
+  "user": {
+    "name": "Rahul Sharma",
+    "email": "rahul@example.com",
+    "password": "User@123",
+    "age": 24,
+    "gender": "male",
+    "heightCm": 175,
+    "weightKg": 78,
+    "activityLevel": "moderate",
+    "fitnessLevel": "beginner",
+    "fitnessGoal": "lose_weight"
+  },
+  "diet_plans": [
+    {
+      "title": "Fat Loss Balanced Plan",
+      "goal": "lose_weight",
+      "fitnessLevel": "all",
+      "calorieRange": "1600-1900 kcal",
+      "meals": {
+        "breakfast": "Oats with banana and boiled eggs",
+        "lunch": "Brown rice, grilled paneer, salad",
+        "dinner": "Soup, roti, mixed vegetables",
+        "snacks": "Fruit, nuts, green tea"
+      },
+      "hydrationTip": "Drink one glass of water before every meal.",
+      "notes": "Keep sugar intake low and avoid late-night snacking."
+    }
+  ],
+  "workout_plans": [
+    {
+      "title": "Beginner Fat Burn Routine",
+      "goal": "lose_weight",
+      "fitnessLevel": "beginner",
+      "duration": "40 minutes",
+      "weeklySchedule": "5 days cardio + 2 days light strength",
+      "exercises": [
+        "Brisk walking",
+        "Jumping jacks",
+        "Bodyweight squats",
+        "Plank",
+        "Stretching"
+      ],
+      "notes": "Start slow and focus on consistency."
+    }
+  ],
+  "tips": [
+    {
+      "title": "Stay Hydrated",
+      "category": "hydration",
+      "content": "Carry a water bottle and sip water regularly through the day.",
+      "targetAudience": "all"
+    }
+  ],
+  "progress": [
+    {
+      "date": "2026-04-15",
+      "currentWeight": 77.2,
+      "caloriesTaken": 1780,
+      "waterTaken": 3.1,
+      "stepsWalked": 11000,
+      "workoutDone": "Cardio and abs",
+      "note": "Improved stamina"
+    }
+  ]
+}

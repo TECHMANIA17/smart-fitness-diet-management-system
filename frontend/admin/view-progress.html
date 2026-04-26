@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>View User Progress | SmartFit</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/admin.css">
+</head>
+<body data-page="view-progress">
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="/admin/admin-dashboard.html"><span class="brand-mark">SF</span><span>Admin</span></a>
+      <nav class="nav-links">
+        <a href="/admin/admin-dashboard.html">Dashboard</a>
+        <a href="/admin/view-progress.html" class="active">Progress</a>
+        <button data-logout="admin">Logout</button>
+      </nav>
+    </div>
+  </header>
+  <main class="page-shell">
+    <section class="page-hero"><div class="container"><h1>View User Progress</h1><p>Admin can monitor progress entries submitted by users.</p><p id="pageMessage" class="message"></p></div></section>
+    <section class="section">
+      <div class="container table-card">
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>User</th><th>Date</th><th>Weight</th><th>Calories</th><th>Water</th><th>Steps</th><th>Workout</th><th>Note</th></tr></thead>
+            <tbody id="adminProgressTable"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer"><div class="container">Progress data supports monitoring and personalized recommendations.</div></footer>
+  <script src="../js/validation.js"></script>
+  <script src="../js/script.js"></script>
+</body>
+</html>
+

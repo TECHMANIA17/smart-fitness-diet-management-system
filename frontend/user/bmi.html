@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BMI Report | SmartFit</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-page="bmi">
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="/user/dashboard.html"><span class="brand-mark">SF</span><span>SmartFit</span></a>
+      <nav class="nav-links">
+        <a href="/user/dashboard.html">Dashboard</a>
+        <a href="/user/bmi.html" class="active">BMI</a>
+        <button data-logout="user">Logout</button>
+      </nav>
+    </div>
+  </header>
+  <main class="page-shell">
+    <section class="page-hero"><div class="container"><span class="eyebrow">Shared Health Snapshot</span><h1>BMI Analysis</h1><p>Automatic BMI calculation, category, ideal weight range, calories, and water data for user and admin review.</p><p id="pageMessage" class="message"></p></div></section>
+    <section class="section">
+      <div class="container grid grid-3">
+        <div class="stat-card"><div class="label">Current BMI</div><div id="bmiMain" class="value">0</div></div>
+        <div class="stat-card"><div class="label">Category</div><div id="bmiCategoryMain" class="value">-</div></div>
+        <div class="stat-card"><div class="label">Ideal Weight Range</div><div id="bmiIdealRange" class="value">-</div></div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container table-card">
+        <span class="eyebrow">Admin Review Ready</span>
+        <h3>BMI Record History</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Date</th><th>Height</th><th>Weight</th><th>BMI</th><th>Status</th><th>Calories</th><th>Water</th></tr></thead>
+            <tbody id="bmiHistoryTable"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer"><div class="container">Useful for weight monitoring and trainer review.</div></footer>
+  <script src="../js/validation.js"></script>
+  <script src="../js/script.js"></script>
+</body>
+</html>
+

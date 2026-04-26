@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manage Tips | SmartFit</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/admin.css">
+</head>
+<body data-page="manage-tips">
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="/admin/admin-dashboard.html"><span class="brand-mark">SF</span><span>Admin</span></a>
+      <nav class="nav-links">
+        <a href="/admin/admin-dashboard.html">Dashboard</a>
+        <a href="/admin/manage-tips.html" class="active">Tips</a>
+        <button data-logout="admin">Logout</button>
+      </nav>
+    </div>
+  </header>
+  <main class="page-shell">
+    <section class="page-hero">
+      <div class="container page-hero-split">
+        <div>
+          <h1>Tips Module Studio</h1>
+          <p>Create tips manually or choose from a curated 100+ tip library for each category.</p>
+          <p id="pageMessage" class="message"></p>
+        </div>
+        <div class="hero-image-card">
+          <img src="/assets/images/meditation-illustration.png" alt="Tips and wellness illustration" class="hero-illustration">
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container stack">
+        <div id="tipsAdminInsights" class="diet-insight-grid"></div>
+        <div class="grid grid-2 tips-admin-layout">
+          <div class="form-card">
+            <h3>Tips Studio</h3>
+            <div id="tipModeToggle" class="tip-mode-toggle"></div>
+            <p id="tipStudioMessage" class="subtle"></p>
+            <div id="tipCategoryCards" class="admin-option-grid compact-cards"></div>
+            <div id="tipLibraryPanel" class="picker-panel">
+              <div class="picker-head">
+                <div>
+                  <div class="eyebrow">Library</div>
+                  <strong id="tipLibraryTitle">Diet tip library</strong>
+                </div>
+                <div class="button-row">
+                  <button type="button" class="btn btn-outline" id="applySelectedTip">Use Selected Tip</button>
+                  <button type="button" class="btn btn-secondary" id="importCategoryTips">Import Category Tips</button>
+                  <button type="button" class="btn btn-primary" id="importAllTips">Import All Tips</button>
+                </div>
+              </div>
+              <div class="field">
+                <label for="tipLibrarySearch">Search Tip Library</label>
+                <input id="tipLibrarySearch" type="text" placeholder="Search by habit, benefit, audience, or tip text">
+              </div>
+              <div id="tipLibrarySummary" class="subtle"></div>
+              <div id="selectedTipPreview" class="tip-preview-card"></div>
+              <div id="tipLibraryOptions" class="tip-library-grid"></div>
+            </div>
+            <form id="tipForm" class="form-grid">
+              <input type="hidden" name="id">
+              <div class="field field-full">
+                <label>Title</label>
+                <input name="title" required>
+              </div>
+              <div class="field">
+                <label>Category</label>
+                <select name="category" required>
+                  <option value="diet">Diet</option>
+                  <option value="workout">Workout</option>
+                  <option value="hydration">Hydration</option>
+                  <option value="motivation">Motivation</option>
+                  <option value="general">General</option>
+                </select>
+              </div>
+              <div class="field">
+                <label>Target Audience</label>
+                <input name="targetAudience" placeholder="all, beginners, gym members, weight loss clients">
+              </div>
+              <div class="field field-full">
+                <label>Assignment Type</label>
+                <select name="assignmentScope" required>
+                  <option value="general">General Tip - All Users</option>
+                  <option value="specific">Specific Tip - Selected User</option>
+                </select>
+              </div>
+              <div class="field field-full">
+                <label>User For Specific Tip</label>
+                <select name="user" id="tipUserSelect"><option value="">Select user when assignment is specific</option></select>
+              </div>
+              <div class="field field-full">
+                <label>Content</label>
+                <textarea name="content" required></textarea>
+              </div>
+              <div class="field field-full">
+                <div class="button-row">
+                  <button class="btn btn-primary" type="submit">Save Tip</button>
+                  <button class="btn btn-outline" type="button" id="resetTipForm">Reset</button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="table-card">
+            <div class="picker-head">
+              <div>
+                <h3>Saved Tips</h3>
+                <p class="subtle">Review, edit, and refine the tips currently available to users.</p>
+              </div>
+              <div class="field saved-tip-filter">
+                <label for="savedTipCategoryFilter">Category Filter</label>
+                <select id="savedTipCategoryFilter">
+                  <option value="all">All Categories</option>
+                  <option value="diet">Diet</option>
+                  <option value="workout">Workout</option>
+                  <option value="hydration">Hydration</option>
+                  <option value="motivation">Motivation</option>
+                  <option value="general">General</option>
+                </select>
+              </div>
+            </div>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Title</th>
+                    <th>Category</th>
+                    <th>Audience</th>
+                    <th>User</th>
+                    <th>Content</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="manageTipTable"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer"><div class="container">Well-crafted tips strengthen engagement, coaching quality, and daily habit tracking.</div></footer>
+  <script src="../js/validation.js"></script>
+  <script src="../js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manage Workout Plans | SmartFit</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/admin.css">
+</head>
+<body data-page="admin-workout-module">
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="/admin/admin-dashboard.html"><span class="brand-mark">SF</span><span>Admin</span></a>
+      <nav class="nav-links">
+        <a href="/admin/admin-dashboard.html">Dashboard</a>
+        <a href="/admin/manage-workouts.html" class="active">Workouts</a>
+        <a href="/admin/manage-diet.html">Diet</a>
+        <button data-logout="admin">Logout</button>
+      </nav>
+    </div>
+  </header>
+  <main class="page-shell">
+    <section class="page-hero"><div class="container"><h1>Workout Module Control Center</h1><p>Monitor the 3-type exercise database and review generated plans across users.</p><p id="pageMessage" class="message"></p></div></section>
+    <section class="section">
+      <div class="container stack">
+        <div id="adminWorkoutStats" class="stats-grid"></div>
+        <div class="grid grid-2">
+          <div class="form-card">
+            <h3>Workout Plan Form</h3>
+            <form id="adminUserPlanForm" class="form-grid">
+              <input type="hidden" name="id">
+              <div class="field field-full"><label>Assignment Type</label><select name="assignmentScope" required><option value="general">General Plan - All Users</option><option value="specific">Specific Plan - Selected User</option></select></div>
+              <div class="field field-full"><label>User For Specific Plan</label><select name="user" id="adminWorkoutUserSelect"><option value="">Select user when assignment is specific</option></select></div>
+              <div class="field field-full"><label>User Email / ID For Specific Plan</label><input name="userIdentifier" placeholder="Required only for specific plan if user is not selected"></div>
+              <div class="field"><label>Plan Title</label><input name="title" required></div>
+              <div class="field"><label>Goal</label><select name="goal" required><option value="weight_loss">Weight Loss</option><option value="muscle_gain">Muscle Gain</option><option value="flexibility">Flexibility</option><option value="endurance">Endurance</option><option value="maintenance">Maintenance</option></select></div>
+              <div class="field"><label>Fitness Level</label><select name="fitnessLevel" required><option value="beginner">Beginner</option><option value="moderate">Moderate</option><option value="advanced">Advanced</option></select></div>
+              <div class="field"><label>Workout Type</label><select name="workoutType" id="adminPlanWorkoutType" required><option value="gym">Gym</option><option value="yoga">Yoga</option><option value="calisthenics">Calisthenics</option></select></div>
+              <div class="field"><label>Workout Days / Week</label><input name="workoutDaysPerWeek" type="number" min="1" max="7" value="3" required></div>
+              <div class="field"><label>Workout Minutes / Day</label><input name="workoutMinutesPerDay" type="number" min="10" max="180" value="45" required></div>
+              <div class="field"><label>Duration</label><input name="duration" placeholder="45 minutes/day"></div>
+              <div class="field"><label>Weekly Schedule</label><input name="weeklySchedule" placeholder="3 structured workout days"></div>
+              <div class="field field-full"><label>Notes</label><textarea name="notes" placeholder="Plan notes for the user"></textarea></div>
+              <div class="field field-full">
+                <label>Select Exercises</label>
+                <div id="adminPlanExercisePicker" class="exercise-picker-grid"></div>
+              </div>
+              <div class="field field-full">
+                <div class="button-row">
+                  <button class="btn btn-primary" type="submit">Save Workout Plan</button>
+                  <button class="btn btn-outline" type="button" id="resetAdminPlanForm">Reset</button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="table-card">
+            <h3>Recently Generated Plans</h3>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>User</th><th>Type</th><th>Goal</th><th>Level</th><th>Days</th><th>Created</th><th>Actions</th></tr></thead>
+                <tbody id="adminWorkoutPlansTable"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="grid grid-2">
+          <div class="form-card">
+            <h3>Exercise Form</h3>
+            <form id="adminExerciseForm" class="form-grid">
+              <input type="hidden" name="id">
+              <div class="field"><label>Exercise Name</label><input name="name" required></div>
+              <div class="field"><label>Slug</label><input name="slug" required></div>
+              <div class="field"><label>Workout Type</label><select name="workoutType" required><option value="gym">Gym</option><option value="yoga">Yoga</option><option value="calisthenics">Calisthenics</option></select></div>
+              <div class="field"><label>Level</label><select name="level" required><option value="beginner">Beginner</option><option value="moderate">Moderate</option><option value="advanced">Advanced</option></select></div>
+              <div class="field"><label>Category</label><input name="category" placeholder="strength, cardio, flexibility" required></div>
+              <div class="field"><label>Body Part</label><input name="bodyPart" placeholder="chest, legs, core" required></div>
+              <div class="field"><label>Equipment</label><input name="equipment" placeholder="none, dumbbell, machine" required></div>
+              <div class="field"><label>Sets</label><input name="sets" type="number" min="1"></div>
+              <div class="field"><label>Reps</label><input name="reps" placeholder="12 reps"></div>
+              <div class="field"><label>Duration</label><input name="duration" placeholder="45 seconds"></div>
+              <div class="field"><label>Rest Seconds</label><input name="restSeconds" type="number" min="0" required></div>
+              <div class="field"><label>Calories Estimate</label><input name="caloriesBurnEstimate" type="number" min="0"></div>
+              <div class="field"><label>Image URL / Path</label><input name="image" required></div>
+              <div class="field field-full"><label>Goal Tags</label><input name="goalTags" placeholder="weight_loss, muscle_gain, endurance"></div>
+              <div class="field field-full"><label>Contraindications</label><input name="contraindications" placeholder="knee, shoulder, lower_back"></div>
+              <div class="field field-full"><label>Instructions</label><textarea name="instructions" required></textarea></div>
+              <div class="field field-full">
+                <div class="button-row">
+                  <button class="btn btn-primary" type="submit">Save Exercise</button>
+                  <button class="btn btn-outline" type="button" id="resetExerciseForm">Reset</button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="table-card">
+            <h3>Exercise Library Overview</h3>
+            <div class="button-row compact-toolbar">
+              <select id="exerciseTypeFilter"><option value="all">All Types</option><option value="gym">Gym</option><option value="yoga">Yoga</option><option value="calisthenics">Calisthenics</option></select>
+              <select id="exerciseLevelFilter"><option value="all">All Levels</option><option value="beginner">Beginner</option><option value="moderate">Moderate</option><option value="advanced">Advanced</option></select>
+            </div>
+            <div id="exerciseLibraryColumns" class="list"></div>
+          </div>
+        </div>
+        <div class="table-card">
+          <h3>Level Distribution</h3>
+          <div id="adminLevelBreakdown" class="list"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer"><div class="container">Workout records support personalization and trainer workflows.</div></footer>
+  <script src="../js/validation.js"></script>
+  <script src="../js/script.js"></script>
+  <script src="../js/workout-module.js"></script>
+</body>
+</html>
+

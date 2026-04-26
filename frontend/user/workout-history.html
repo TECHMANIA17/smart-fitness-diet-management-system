@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Workout History | SmartFit</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-page="workout-history">
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="/user/dashboard.html"><span class="brand-mark">SF</span><span>SmartFit</span></a>
+      <nav class="nav-links">
+        <a href="/user/dashboard.html">Dashboard</a>
+        <a href="/user/workout-plan.html">Workout Planner</a>
+        <a href="/user/workout-history.html" class="active">Workout History</a>
+        <button data-logout="user">Logout</button>
+      </nav>
+    </div>
+  </header>
+  <main class="page-shell">
+    <section class="page-hero">
+      <div class="container">
+        <span class="eyebrow">Generated Plan Timeline</span>
+        <h1>Workout History</h1>
+        <p>Review your generated weekly plans and regenerate a fresh variation while admin-assigned plans remain available from your dashboard.</p>
+        <p id="historyMessage" class="message"></p>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container">
+        <div id="workoutHistoryList" class="list"></div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer"><div class="container">Use your workout history to compare training focus across weeks.</div></footer>
+  <script src="../js/validation.js"></script>
+  <script src="../js/script.js"></script>
+  <script src="../js/workout-module.js"></script>
+</body>
+</html>

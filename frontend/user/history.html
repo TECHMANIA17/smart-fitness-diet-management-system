@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>History | SmartFit</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-page="history">
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="/user/dashboard.html"><span class="brand-mark">SF</span><span>SmartFit</span></a>
+      <nav class="nav-links">
+        <a href="/user/dashboard.html">Dashboard</a>
+        <a href="/user/history.html" class="active">History</a>
+        <button data-logout="user">Logout</button>
+      </nav>
+    </div>
+  </header>
+  <main class="page-shell">
+    <section class="page-hero">
+      <div class="container">
+        <span class="eyebrow">Progress Timeline</span>
+        <h1>Progress History</h1>
+        <p>Filter and sort the same saved fitness records the admin can review from the progress module.</p>
+        <p id="pageMessage" class="message"></p>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container table-card">
+        <div class="button-row">
+          <select id="sortHistory">
+            <option value="latest">Latest First</option>
+            <option value="oldest">Oldest First</option>
+          </select>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Date</th><th>Weight</th><th>Calories</th><th>Water</th><th>Steps</th><th>Workout</th><th>BMI</th><th>Note</th></tr></thead>
+            <tbody id="historyTable"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer"><div class="container">History helps users and trainers compare performance over time.</div></footer>
+  <script src="../js/validation.js"></script>
+  <script src="../js/script.js"></script>
+</body>
+</html>
+

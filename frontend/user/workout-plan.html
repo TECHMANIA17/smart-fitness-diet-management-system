@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Workout Plans | SmartFit</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-page="workout-module">
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="/user/dashboard.html"><span class="brand-mark">SF</span><span>SmartFit</span></a>
+      <nav class="nav-links">
+        <a href="/user/dashboard.html">Dashboard</a>
+        <a href="/user/workout-plan.html" class="active">Workout Plans</a>
+        <a href="/user/workout-history.html">Workout History</a>
+        <button data-logout="user">Logout</button>
+      </nav>
+    </div>
+  </header>
+  <main class="page-shell">
+    <section class="page-hero">
+      <div class="container page-hero-split">
+        <div>
+          <span class="eyebrow">Workout Communication</span>
+          <h1>Personalized Workout Planner</h1>
+          <p>Generate your own weekly plan or keep your profile updated so admin-created workout assignments match your goal, level, and equipment.</p>
+          <p id="pageMessage" class="message"></p>
+        </div>
+        <div class="hero-image-card">
+          <img
+            src="/assets/images/workout-category-gym.png"
+            alt="Gym workout illustration"
+            class="hero-illustration"
+            id="workoutCategoryHeroImage"
+          >
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container stack">
+        <div class="workout-dashboard">
+          <div class="workout-summary-panel">
+            <span class="eyebrow">Workout Overview</span>
+            <h3>Admin workout plans</h3>
+            <div class="tips-stat-grid">
+              <div><span>Specific</span><strong id="workoutSpecificCount">0</strong></div>
+              <div><span>General</span><strong id="workoutGeneralCount">0</strong></div>
+              <div><span>Done Today</span><strong id="workoutSatisfiedCount">0</strong></div>
+            </div>
+          </div>
+          <div class="workout-daily-panel">
+            <span class="eyebrow">Daily Satisfaction</span>
+            <h3 id="workoutTodayStatus">No workout marked today</h3>
+            <p class="subtle">Specific plans assigned to you and general admin plans appear here. After finishing a plan, mark it satisfied for today.</p>
+          </div>
+        </div>
+        <section class="workout-section">
+          <div class="section-heading-row">
+            <div>
+              <span class="eyebrow">Assigned To You</span>
+              <h3>Admin Workout Plans</h3>
+            </div>
+            <span class="stat-pill warm" id="specificWorkoutBadge">0 plans</span>
+          </div>
+          <div id="specificWorkoutPlans" class="workout-plan-grid"></div>
+        </section>
+        <section class="workout-section">
+          <div class="section-heading-row">
+            <div>
+              <span class="eyebrow">For Everyone</span>
+              <h3>General Workout Plans</h3>
+            </div>
+            <span class="stat-pill" id="generalWorkoutBadge">0 plans</span>
+          </div>
+          <div id="generalWorkoutPlans" class="workout-plan-grid"></div>
+        </section>
+      </div>
+    </section>
+  </main>
+  <footer class="footer"><div class="container">Workout plans support gyms, trainers, and fitness coaching centers.</div></footer>
+  <script src="../js/validation.js"></script>
+  <script src="../js/script.js"></script>
+</body>
+</html>
+

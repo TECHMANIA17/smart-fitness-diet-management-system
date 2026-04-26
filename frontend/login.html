@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Login | SmartFit</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body data-page="login">
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="/index.html"><span class="brand-mark">SF</span><span>SmartFit</span></a>
+      <nav class="nav-links">
+        <a href="/index.html">Home</a>
+        <a href="/register.html">Register</a>
+        <a href="/login.html" class="active">Login</a>
+      </nav>
+    </div>
+  </header>
+  <main class="page-shell">
+    <section class="page-hero">
+      <div class="container page-hero-split">
+        <div>
+          <span class="eyebrow">User Portal</span>
+          <h1>User Login</h1>
+          <p>Access your admin-assigned diet plans, workout plans, tips, BMI records, and daily progress history.</p>
+        </div>
+        <div class="hero-image-card">
+          <img src="/assets/images/meditation-illustration.png" alt="Wellness portal illustration" class="hero-illustration">
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container auth-layout">
+        <div class="form-card auth-card">
+          <h3>Sign in to SmartFit</h3>
+          <form id="loginForm" class="form-grid" autocomplete="off" data-auth-form="user">
+            <div class="field field-full"><label>Email</label><input type="email" name="email" autocomplete="new-password" data-no-prefill required></div>
+            <div class="field field-full"><label>Password</label><input type="password" name="password" autocomplete="new-password" data-no-prefill required></div>
+            <div class="field field-full"><button class="btn btn-primary" type="submit">Login to User Dashboard</button></div>
+          </form>
+          <p id="loginMessage" class="message"></p>
+        </div>
+        <div class="table-card auth-support-card">
+          <h3>What you will see</h3>
+          <div class="compact-list">
+            <div class="list-item"><strong>Admin plans</strong><span class="subtle">Diet and workout assignments created from the admin module.</span></div>
+            <div class="list-item"><strong>Personal tips</strong><span class="subtle">General tips plus any advice sent only to your account.</span></div>
+            <div class="list-item"><strong>Progress records</strong><span class="subtle">Your daily entries help the admin review consistency.</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer"><div class="container">User routes are protected with JWT-based authentication.</div></footer>
+  <script src="js/validation.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
+

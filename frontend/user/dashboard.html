@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Dashboard | SmartFit</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/dashboard.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body data-page="dashboard">
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="/user/dashboard.html"><span class="brand-mark">SF</span><span>SmartFit</span></a>
+      <nav class="nav-links">
+        <a href="/user/dashboard.html" class="active">Dashboard</a>
+        <a href="/user/profile.html">Profile</a>
+        <a href="/user/bmi.html">BMI</a>
+        <a href="/user/diet-plan.html">Diet</a>
+        <a href="/user/workout-plan.html">Workout</a>
+        <a href="/user/progress.html">Progress</a>
+        <a href="/user/history.html">History</a>
+        <a href="/user/tips.html">Tips</a>
+        <button data-logout="user">Logout</button>
+      </nav>
+    </div>
+  </header>
+  <main class="page-shell">
+    <section class="page-hero"><div class="container"><span class="eyebrow">User Control Center</span><h1>Welcome, <span id="welcomeName">User</span></h1><p>Your health summary, admin-assigned plans, personal tips, and progress communication appear here in one place.</p><p id="pageMessage" class="message"></p></div></section>
+    <section class="section">
+      <div class="container stats-grid">
+        <div class="stat-card"><div class="label">Current BMI</div><div class="value" id="bmiValue">0</div></div>
+        <div class="stat-card"><div class="label">BMI Status</div><div class="value" id="bmiStatus">-</div></div>
+        <div class="stat-card"><div class="label">Ideal Weight</div><div class="value" id="idealWeight">-</div></div>
+        <div class="stat-card"><div class="label">Calories</div><div class="value" id="calorieValue">-</div></div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container two-column">
+        <div class="card">
+          <h3>Hydration Recommendation</h3>
+          <p class="value" id="waterValue">-</p>
+          <div class="chart-box"><canvas id="progressChart"></canvas></div>
+        </div>
+        <div class="grid">
+          <div class="card media-card media-card-inline">
+            <div class="media-copy">
+              <h3 id="dietTitle">Diet Plan</h3>
+              <p id="dietSummary" class="subtle"></p>
+            </div>
+            <img src="/assets/images/diet-illustration.png" alt="Diet plan illustration" class="media-thumb">
+          </div>
+          <div class="card media-card media-card-inline">
+            <div class="media-copy">
+              <h3 id="workoutTitle">Workout Plan</h3>
+              <p id="workoutSummary" class="subtle"></p>
+            </div>
+            <img src="/assets/images/workout-illustration.png" alt="Workout plan illustration" class="media-thumb">
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container">
+        <div class="table-card admin-communication-card">
+          <div>
+            <span class="eyebrow">Admin Communication</span>
+            <h3>Plan and Tip Updates</h3>
+            <p class="subtle">When the admin assigns a diet plan, workout plan, or tip to your account, it appears in your dashboard and relevant module automatically.</p>
+          </div>
+          <div class="communication-grid" id="adminCommunicationGrid"></div>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container grid grid-2">
+        <div class="table-card"><h3>Recent Progress</h3><div id="recentProgressList" class="list"></div></div>
+        <div class="table-card"><h3>Fitness Tips</h3><div id="tipList" class="list"></div></div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer"><div class="container">Dashboard cards combine automatic calculations with stored history.</div></footer>
+  <script src="../js/api.js"></script>
+  <script src="../js/chart.js"></script>
+  <script src="../js/dashboard.js"></script>
+  <script src="../js/validation.js"></script>
+  <script src="../js/script.js"></script>
+</body>
+</html>
+

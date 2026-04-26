@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard | SmartFit</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/admin.css">
+</head>
+<body data-page="admin-dashboard">
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="/admin/admin-dashboard.html"><span class="brand-mark">SF</span><span>SmartFit Admin</span></a>
+      <nav class="nav-links">
+        <a href="/admin/admin-dashboard.html" class="active">Dashboard</a>
+        <a href="/admin/manage-users.html">Users</a>
+        <a href="/admin/manage-diet.html">Diet</a>
+        <a href="/admin/manage-workouts.html">Workouts</a>
+        <a href="/admin/manage-tips.html">Tips</a>
+        <a href="/admin/view-progress.html">Progress</a>
+        <button data-logout="admin">Logout</button>
+      </nav>
+    </div>
+  </header>
+  <main class="page-shell">
+    <section class="page-hero"><div class="container"><h1>Admin Dashboard</h1><p>Monitor application data and business operations.</p><p id="pageMessage" class="message"></p></div></section>
+    <section class="section">
+      <div class="container stats-grid">
+        <div class="stat-card"><div class="label">Users</div><div class="value" id="adminUsersCount">0</div></div>
+        <div class="stat-card"><div class="label">Diet Plans</div><div class="value" id="adminDietCount">0</div></div>
+        <div class="stat-card"><div class="label">Workout Plans</div><div class="value" id="adminWorkoutCount">0</div></div>
+        <div class="stat-card"><div class="label">Progress Records</div><div class="value" id="adminProgressCount">0</div></div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container table-card">
+        <h3>Recent Users</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Name</th><th>Email</th><th>Goal</th><th>Level</th><th>Joined</th></tr></thead>
+            <tbody id="adminRecentUsers"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer"><div class="container">Admin module supports gyms, trainers, and health center staff.</div></footer>
+  <script src="../js/validation.js"></script>
+  <script src="../js/script.js"></script>
+</body>
+</html>
+

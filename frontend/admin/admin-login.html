@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Login | SmartFit</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/admin.css">
+</head>
+<body data-page="admin-login">
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="/index.html"><span class="brand-mark">SF</span><span>SmartFit</span></a>
+      <nav class="nav-links">
+        <a href="/index.html">Home</a>
+        <a href="/admin/admin-login.html" class="active">Admin Login</a>
+      </nav>
+    </div>
+  </header>
+  <main class="page-shell">
+    <section class="page-hero"><div class="container"><h1>Admin Login</h1><p>Manage users, diet plans, workout plans, and tips.</p></div></section>
+    <section class="section">
+      <div class="container form-card">
+        <form id="adminLoginForm" class="form-grid" autocomplete="off" data-auth-form="admin">
+          <div class="field field-full"><label>Email</label><input type="email" name="email" autocomplete="new-password" data-no-prefill required></div>
+          <div class="field field-full"><label>Password</label><input type="password" name="password" autocomplete="new-password" data-no-prefill required></div>
+          <div class="field field-full"><button class="btn btn-primary" type="submit">Login as Admin</button></div>
+        </form>
+        <p id="adminLoginMessage" class="message"></p>
+      </div>
+    </section>
+  </main>
+  <footer class="footer"><div class="container">Admin routes are protected with JWT-based authentication.</div></footer>
+  <script src="../js/validation.js"></script>
+  <script src="../js/script.js"></script>
+</body>
+</html>
+

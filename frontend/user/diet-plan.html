@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diet Plans | SmartFit</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-page="diet-plan">
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="/user/dashboard.html"><span class="brand-mark">SF</span><span>SmartFit</span></a>
+      <nav class="nav-links">
+        <a href="/user/dashboard.html">Dashboard</a>
+        <a href="/user/diet-plan.html" class="active">Diet Plans</a>
+        <button data-logout="user">Logout</button>
+      </nav>
+    </div>
+  </header>
+  <main class="page-shell">
+    <section class="page-hero">
+      <div class="container page-hero-split">
+        <div>
+          <span class="eyebrow">Admin Nutrition Desk</span>
+          <h1>Diet Plan Recommendations</h1>
+          <p>Review default nutrition guidance and any diet plan assigned directly to your account by the admin.</p>
+          <p id="pageMessage" class="message"></p>
+        </div>
+        <div class="hero-image-card">
+          <img src="/assets/images/diet-category-pure-veg.png" alt="Pure veg diet illustration" class="hero-illustration">
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container stack">
+        <div class="diet-dashboard">
+          <div class="diet-summary-panel">
+            <span class="eyebrow">Diet Overview</span>
+            <h3>Your nutrition plans</h3>
+            <div class="tips-stat-grid">
+              <div><span>Total</span><strong id="dietTotalCount">0</strong></div>
+              <div><span>Specific</span><strong id="dietSpecificCount">0</strong></div>
+              <div><span>General</span><strong id="dietGeneralCount">0</strong></div>
+            </div>
+          </div>
+          <div class="diet-daily-panel">
+            <span class="eyebrow">Daily Satisfaction</span>
+            <h3 id="dietTodayStatus">No diet marked today</h3>
+            <p class="subtle">After completing a diet plan for today, tap the satisfaction button on that plan. Your daily status updates instantly.</p>
+          </div>
+        </div>
+        <section class="diet-section">
+          <div class="section-heading-row">
+            <div>
+              <span class="eyebrow">Assigned To You</span>
+              <h3>Specific Diet Plans</h3>
+            </div>
+            <span class="stat-pill warm" id="specificDietBadge">0 plans</span>
+          </div>
+          <div id="specificDietPlans" class="diet-plan-grid"></div>
+        </section>
+        <section class="diet-section">
+          <div class="section-heading-row">
+            <div>
+              <span class="eyebrow">For Everyone</span>
+              <h3>General Diet Plans</h3>
+            </div>
+            <span class="stat-pill" id="generalDietBadge">0 plans</span>
+          </div>
+          <div id="generalDietPlans" class="diet-plan-grid"></div>
+        </section>
+      </div>
+    </section>
+  </main>
+  <footer class="footer"><div class="container">Diet plans can be customized for weight loss, maintenance, muscle gain, and more.</div></footer>
+  <script src="../js/validation.js"></script>
+  <script src="../js/script.js"></script>
+</body>
+</html>
+

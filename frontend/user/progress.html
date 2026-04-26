@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Track Progress | SmartFit</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-page="progress">
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="/user/dashboard.html"><span class="brand-mark">SF</span><span>SmartFit</span></a>
+      <nav class="nav-links">
+        <a href="/user/dashboard.html">Dashboard</a>
+        <a href="/user/progress.html" class="active">Progress</a>
+        <a href="/user/history.html">History</a>
+        <button data-logout="user">Logout</button>
+      </nav>
+    </div>
+  </header>
+  <main class="page-shell">
+    <section class="page-hero"><div class="container"><span class="eyebrow">Progress Communication</span><h1>Add Daily Progress</h1><p>Log the details your dashboard and admin progress view use to understand your current routine.</p></div></section>
+    <section class="section">
+      <div class="container auth-layout">
+      <div class="form-card">
+        <h3>Daily Entry</h3>
+        <form id="progressForm" class="form-grid">
+          <div class="field"><label>Date</label><input type="date" name="date" required></div>
+          <div class="field"><label>Current Weight (kg)</label><input type="number" step="0.1" name="currentWeight" required></div>
+          <div class="field"><label>Calories Taken</label><input type="number" name="caloriesTaken" required></div>
+          <div class="field"><label>Water Taken (L)</label><input type="number" step="0.1" name="waterTaken" required></div>
+          <div class="field"><label>Steps Walked</label><input type="number" name="stepsWalked" required></div>
+          <div class="field"><label>Workout Done</label><input type="text" name="workoutDone" required></div>
+          <div class="field field-full"><label>Note</label><textarea name="note"></textarea></div>
+          <div class="field field-full"><button class="btn btn-primary" type="submit">Save Progress</button></div>
+        </form>
+        <p id="progressMessage" class="message"></p>
+      </div>
+      <div class="table-card auth-support-card">
+        <h3>Visible to Admin</h3>
+        <div class="compact-list">
+          <div class="list-item">Weight, calories, water, steps, workout, and note appear in the admin progress table.</div>
+          <div class="list-item">Consistent entries make assigned diet and workout changes easier to judge.</div>
+          <div class="list-item">Use short workout names that match your active plan when possible.</div>
+        </div>
+      </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer"><div class="container">Each entry updates history and supports analysis over time.</div></footer>
+  <script src="../js/validation.js"></script>
+  <script src="../js/script.js"></script>
+</body>
+</html>
+

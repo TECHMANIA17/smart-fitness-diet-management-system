@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fitness Tips | SmartFit</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-page="tips">
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="/user/dashboard.html"><span class="brand-mark">SF</span><span>SmartFit</span></a>
+      <nav class="nav-links">
+        <a href="/user/dashboard.html">Dashboard</a>
+        <a href="/user/tips.html" class="active">Tips</a>
+        <button data-logout="user">Logout</button>
+      </nav>
+    </div>
+  </header>
+  <main class="page-shell">
+    <section class="page-hero">
+      <div class="container page-hero-split">
+        <div>
+          <span class="eyebrow">Admin Tips Inbox</span>
+          <h1>Fitness Tips</h1>
+          <p>Read general advice from the admin plus any tip sent specifically to your user account.</p>
+          <p id="pageMessage" class="message"></p>
+        </div>
+        <div class="hero-image-card">
+          <img src="/assets/images/meditation-illustration.png" alt="Meditation and wellness illustration" class="hero-illustration">
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container stack">
+        <div class="tips-dashboard">
+          <div class="tips-summary-panel">
+            <span class="eyebrow">Tips Overview</span>
+            <h3>Your admin guidance</h3>
+            <div class="tips-stat-grid">
+              <div><span>Total</span><strong id="tipsTotalCount">0</strong></div>
+              <div><span>Specific</span><strong id="tipsSpecificCount">0</strong></div>
+              <div><span>General</span><strong id="tipsGeneralCount">0</strong></div>
+            </div>
+          </div>
+          <div class="tips-filter-panel">
+            <span class="eyebrow">Category Filter</span>
+            <div id="tipsCategoryFilter" class="tips-filter-row"></div>
+          </div>
+        </div>
+        <section class="tips-section">
+          <div class="section-heading-row">
+            <div>
+              <span class="eyebrow">Assigned To You</span>
+              <h3>Specific Tips</h3>
+            </div>
+            <span class="stat-pill warm" id="specificTipsBadge">0 tips</span>
+          </div>
+          <div id="specificTipsGrid" class="tips-grid"></div>
+        </section>
+        <section class="tips-section">
+          <div class="section-heading-row">
+            <div>
+              <span class="eyebrow">For Everyone</span>
+              <h3>General Tips</h3>
+            </div>
+            <span class="stat-pill" id="generalTipsBadge">0 tips</span>
+          </div>
+          <div id="generalTipsGrid" class="tips-grid"></div>
+        </section>
+      </div>
+    </section>
+  </main>
+  <footer class="footer"><div class="container">Tips make the application more helpful for business use.</div></footer>
+  <script src="../js/validation.js"></script>
+  <script src="../js/script.js"></script>
+</body>
+</html>
+
